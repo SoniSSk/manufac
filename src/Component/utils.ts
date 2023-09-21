@@ -18,18 +18,17 @@ export function getUniqueAlcoholValues(data: any): number[] {
 
 // Create a map of alcohol values to arrays of flavanoids values from the given data.
 
-export function createAlcoholFlavanoidsMap(data: any): Record<number, number[]> {
+export function createAlcoholFlavanoidsMap(data: any, key: any): Record<number, number[]> {
     const result: Record<number, number[]> = {};
-
     data.forEach((item: any) => {
         const alcohol = item.Alcohol;
-        const flavanoids = item.Flavanoids;
+        const selectedKey = item[key];
 
         if (!result[alcohol]) {
             result[alcohol] = [];
         }
 
-        result[alcohol].push(Number(flavanoids));
+        result[alcohol].push(Number(selectedKey));
     });
 
     return result;

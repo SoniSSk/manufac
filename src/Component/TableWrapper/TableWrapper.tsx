@@ -10,8 +10,8 @@ const TableWrapper: React.FC = () => {
     const measure: number[] = uniqueAlcoholValues || [];
 
     const ListOfData: any = {
-        "Flavanoids": calculateStats(createAlcoholFlavanoidsMap(wineData)),
-        "Gamma": calculateStats(calculateAlcoholValues(wineData))
+        "Flavanoids": calculateStats(createAlcoholFlavanoidsMap(wineData, 'Flavanoids')),
+        "Gamma": calculateStats(calculateAlcoholValues(wineData)),
     };
 
     return (
