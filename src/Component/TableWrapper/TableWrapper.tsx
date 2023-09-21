@@ -9,21 +9,23 @@ const TableWrapper: React.FC = () => {
     const uniqueAlcoholValues = getUniqueAlcoholValues(wineData);
     const measure: number[] = uniqueAlcoholValues || [];
 
-    const ListOfData = [
-        calculateStats(createAlcoholFlavanoidsMap(wineData)),
-        calculateStats(calculateAlcoholValues(wineData))
-    ];
+    const ListOfData: any = {
+        "Flavanoids": calculateStats(createAlcoholFlavanoidsMap(wineData)),
+        "Gamma": calculateStats(calculateAlcoholValues(wineData))
+    };
 
     return (
         <div className={styles.main_container}>
-            {ListOfData.map((data, index) => (
-                <div className={styles.container} key={index}>
-                    <TableRow rowData={measure} />
-                    <TableColumn columnData={data.mean} values={"Mean"} />
-                    <TableColumn columnData={data.median} values={"Median"} />
-                    <TableColumn columnData={data.mode} values={"Mode"} />
-                </div>
-            ))}
+            {Object.keys(ListOfData).map((key: any, index: any) => {
+                return (
+                    <div className={styles.container} key={index}>
+                        <TableRow rowData={measure} />
+                        <TableColumn columnData={ListOfData[key].mean} values={`${key} Mean`} />
+                        <TableColumn columnData={ListOfData[key].median} values={`${key} Median`} />
+                        <TableColumn columnData={ListOfData[key].mode} values={`${key} Mode`} />
+                    </div>
+                )
+            })}
         </div>
     );
 };
