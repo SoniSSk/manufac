@@ -2,8 +2,7 @@
 
 Deploy Link:- https://sonissk.github.io/manufac/
 
-<img width="782" alt="Screenshot 2023-09-21 at 10 43 33 PM" src="https://github.com/SoniSSk/manufac/assets/49443497/e699fb2a-0f3b-4cd0-b4d1-5866351a3f3e">
-
+<img width="814" alt="Screenshot 2023-09-21 at 10 53 06 PM" src="https://github.com/SoniSSk/manufac/assets/49443497/a097c4ae-31b7-4b45-8a49-3ef4d9472924">
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
